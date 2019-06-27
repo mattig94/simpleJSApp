@@ -6,8 +6,12 @@ var repository = [
 
 
 for (var i = 0; i < repository.length; i++) {
-	document.write(repository[i].name + ' \(height\: ' + repository[i].height + '\)')
-	if (repository[i].height > 45) {
-		document.write(' -Wow, that\'s big!');
+	var name = repository[i].name;
+	var height = repository[i].height;
+	document.write(name + ' \(height\: ' + height + '\)')
+	if (height > 45) {
+		document.write(' -Wow, that\'s big!<br>');
+	} else {
+		document.write('<br>')
 	}
 }
