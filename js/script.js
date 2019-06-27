@@ -3,3 +3,7 @@ var repository = [
 	{name: 'Spheal', height: 31, types: ['ice', 'water']},
 	{name: 'Starmie', height: 43, types: ['water', 'psychic']}
 ]
+
+for (var i = 0; i < repository.length; i++) {
+	document.write(repository[i].name + ' \(height\: ' + repository[i].height + '\)<br>')
+}
