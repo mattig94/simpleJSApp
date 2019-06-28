@@ -5,13 +5,22 @@ var repository = [
 ];
 
 
-for (var i = 0; i < repository.length; i++) {
-	var name = repository[i].name;
-	var height = repository[i].height;
-	document.write(name + ' \(height\: ' + height + '\)')
-	if (height > 45) {
-		document.write(' -Wow, that\'s big!<br>');
+// for (var i = 0; i < repository.length; i++) {
+// 	var name = repository[i].name;
+// 	var height = repository[i].height;
+// 	document.write('<p>' + name + ' \(height\: ' + height + '\)')
+// 	if (height > 45) {
+// 		document.write(' -Wow, that\'s big!</p>');
+// 	} else {
+// 		document.write('</p>');
+// 	}
+// };
+
+repository.forEach(function(pokemon){
+	document.write('<p>' + pokemon.name + ' \(height\: ' + pokemon.height + '\)')
+	if (pokemon.height > 45) {
+		document.write(' -Wow, that\'s big!</p>');
 	} else {
-		document.write('<br>')
+		document.write('</p>');
 	}
-}
+});
