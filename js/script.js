@@ -20,9 +20,9 @@ var pokemonRepository = (function() {
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-	document.write('<p>' + pokemon.name + ' \(height: ' + pokemon.height + '\)');
+	document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ')');
 	if (pokemon.height > 45) {
-		document.write(' -Wow, that\'s big\!</p>');
+		document.write(" -Wow, that's big!</p>");
 	} else {
 		document.write('</p>');
 	}
