@@ -22,15 +22,24 @@ var pokemonRepository = (function() {
 		nameButton.classList.add('main-pokemon-button');
 		listItem.appendChild(nameButton);
 		$pokemonList.appendChild(listItem);
+		nameButton.addEventListener('click', function(event){
+			showDetails(pokemon);
+		});
+	}
+
+	function showDetails(pokemon){
+		console.log(pokemon.name);
 	}
 
 	return {
 		add: add,
 		getAll: getAll,
-		addListItem: addListItem
+		addListItem: addListItem,
 	};
+
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
 	pokemonRepository.addListItem(pokemon);
 });
+
