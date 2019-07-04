@@ -1,0 +1,56 @@
+/*Variables*/
+:root {
+	--handwriting: 'Sue Ellen Francisco', sans-serif;
+	--main-text: 'Raleway', sans-serif;
+	--normal-font: 400;
+	--heavy-font: 500;
+}
+
+/*Tags*/
+* {
+	padding-left: 15px;
+}
+
+h1 {
+	font-family: var(--main-text);
+	font-weight: var(--heavy-font);
+	font-size: 28px;
+}
+
+li {
+	list-style-type: none;
+	padding: 0;
+}
+
+/*Classes*/
+.main-pokemon-button {
+	background: mintcream;
+	border: 1px solid lightgrey;
+	font-family: var(--handwriting);
+	font-weight: var(--heavy-font);
+	font-size: 22px;
+	line-height: 2.5;
+	text-align: left;
+	width: 100%;
+}
+
+.pokemon-list {
+	width: 50%;
+}
+
+/*Media Queries -- Breaking points = 768px, 992pxpx, 1200px*/
+@media all and (min-width: 500px) and (max-width: 992px) {
+	.pokemon-list {
+		width: 75%;
+	}	
+}
+
+@media all and (max-width: 500px) {
+	* {
+		padding: 5px;
+	}
+
+	.pokemon-list {
+		width: 100%;
+	}
+}
