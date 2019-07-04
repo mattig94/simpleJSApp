@@ -1,3 +1,4 @@
+//IIFE
 var pokemonRepository = (function() {
 	var repository = [
 		{ name: 'Pelipper', height: 47, types: ['water', 'flying'] },
@@ -13,17 +14,23 @@ var pokemonRepository = (function() {
 		repository.push(pokemon);
 	}
 
+	function addListItem(pokemon) {
+		var $pokemonList = document.querySelector('.pokemon-list');
+		var listItem = document.createElement('li');
+		var nameButton = document.createElement('button');
+		nameButton.innerText = pokemon.name;
+		nameButton.classList.add('main-pokemon-button');
+		listItem.appendChild(nameButton);
+		$pokemonList.appendChild(listItem);
+	}
+
 	return {
 		add: add,
-		getAll: getAll
+		getAll: getAll,
+		addListItem: addListItem
 	};
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-	document.write('<p>' + pokemon.name + ' (height: ' + pokemon.height + ')');
-	if (pokemon.height > 45) {
-		document.write(" -Wow, that's big!</p>");
-	} else {
-		document.write('</p>');
-	}
+	pokemonRepository.addListItem(pokemon);
 });
