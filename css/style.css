@@ -24,7 +24,7 @@ li {
 
 /*Classes*/
 .main-pokemon-button {
-	background: mintcream;
+	background: lightcyan;
 	border: 1px solid lightgrey;
 	font-family: var(--handwriting);
 	font-weight: var(--heavy-font);
@@ -32,6 +32,11 @@ li {
 	line-height: 2.5;
 	text-align: left;
 	width: 100%;
+}
+
+.main-pokemon-button:hover {
+	border: 1px solid grey;
+	background: cyan;
 }
 
 .pokemon-list {
