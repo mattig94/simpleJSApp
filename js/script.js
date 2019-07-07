@@ -75,10 +75,6 @@ var pokemonRepository = (function() {
 	};
 })();
 
-pokemonRepository.getAll().forEach(function(pokemon) {
-	pokemonRepository.addListItem(pokemon);
-});
-
 pokemonRepository.loadList().then(function() {
 	// Now the data is loaded!
 	pokemonRepository.getAll().forEach(function(pokemon) {
