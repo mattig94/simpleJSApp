@@ -13,8 +13,8 @@
 
 h1 {
 	font-family: var(--main-text);
-	font-weight: var(--heavy-font);
 	font-size: 28px;
+	font-weight: var(--heavy-font);
 }
 
 li {
@@ -27,16 +27,16 @@ li {
 	background: lightcyan;
 	border: 1px solid lightgrey;
 	font-family: var(--handwriting);
-	font-weight: var(--heavy-font);
 	font-size: 22px;
+	font-weight: var(--heavy-font);
 	line-height: 2.5;
 	text-align: left;
 	width: 100%;
 }
 
-.main-pokemon-button:hover {
-	border: 1px solid grey;
+.main-pokemon-button:hover, :focus {
 	background: cyan;
+	border: 1px solid grey;
 }
 
 .pokemon-list {
