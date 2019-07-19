@@ -39,7 +39,7 @@ var pokemonRepository = (function() {
 		var imgElement = document.createElement('img');
 		var nameTitle = document.createElement('h2');
 		var heightElement = document.createElement('p');
-		var typeElement = document.createElement('p');
+		var weightElement = document.createElement('p');
 
 		//clear contents
 		$modalContainer.innerHTML = '';
@@ -53,15 +53,15 @@ var pokemonRepository = (function() {
 		imgElement.setAttribute('src', item.imageUrl);
 		imgElement.setAttribute('alt', 'Picture of ' + item.name);
 		nameTitle.innerText = item.name;
-		heightElement.innerText = 'Height: ' + item.height + ' decimeters';
-		typeElement.innerText = 'Types: ' + item.types;
+		heightElement.innerText = 'Height: ' + item.height/10 + ' meters';
+		weightElement.innerText = 'Weight: ' + item.weight/10 + ' kilograms';
 
 		//add contents
 		modal.appendChild(closeButton);
 		modal.appendChild(imgElement);
 		modal.appendChild(nameTitle);
 		modal.appendChild(heightElement);
-		modal.appendChild(typeElement);
+		modal.appendChild(weightElement);
 		$modalContainer.appendChild(modal);
 
 		$modalContainer.classList.add('is-visible');
@@ -116,10 +116,7 @@ var pokemonRepository = (function() {
 				// Now we add the details to the item
 				item.imageUrl = details.sprites.front_default;
 				item.height = details.height;
-				item.types = Object.keys(details.types).forEach(function(item) {
-					console.log(details.types[item]);
-					return details.types[item];
-				});
+				item.weight = details.weight;
 			})
 			.catch(function(e) {
 				console.error(e);
