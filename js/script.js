@@ -19,7 +19,7 @@ var pokemonRepository = (function() {
 		nameButton.classList.add('main-pokemon-button');
 		listItem.appendChild(nameButton);
 		$pokemonList.appendChild(listItem);
-		nameButton.addEventListener('click', function(event) {
+		nameButton.addEventListener('click', function() {
 			showDetails(pokemon);
 		});
 	}
@@ -53,15 +53,15 @@ var pokemonRepository = (function() {
 		imgElement.setAttribute('src', item.imageUrl);
 		imgElement.setAttribute('alt', 'Picture of ' + item.name);
 		nameTitle.innerText = item.name;
-		heightElement.innerText = 'Height: ' + item.height;
-		//typeElement.innerText = 'Types: ' + item.types;
+		heightElement.innerText = 'Height: ' + item.height + ' decimeters';
+		typeElement.innerText = 'Types: ' + item.types;
 
 		//add contents
 		modal.appendChild(closeButton);
 		modal.appendChild(imgElement);
 		modal.appendChild(nameTitle);
 		modal.appendChild(heightElement);
-		//modal.appendChild(typeElement);
+		modal.appendChild(typeElement);
 		$modalContainer.appendChild(modal);
 
 		$modalContainer.classList.add('is-visible');
@@ -116,7 +116,10 @@ var pokemonRepository = (function() {
 				// Now we add the details to the item
 				item.imageUrl = details.sprites.front_default;
 				item.height = details.height;
-				item.types = Object.keys(details.types);
+				item.types = Object.keys(details.types).forEach(function(item) {
+					console.log(details.types[item]);
+					return details.types[item];
+				});
 			})
 			.catch(function(e) {
 				console.error(e);
